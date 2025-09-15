@@ -5,3 +5,4 @@ __pycache__/
 .env
 .venv
 .envrc
+SESSION_SUMMARY.md
