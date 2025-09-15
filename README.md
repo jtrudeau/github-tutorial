@@ -63,7 +63,7 @@ git status
 ```
 
 ## 3) Make a tiny change
-Open `exercises/gaussian.ipynb`, run the single cell to generate the plot, then save the notebook.
+Open `exercises/gaussian.ipynb`, run the single cell to generate the plot, then save the notebook. What about this file?
 
 Tips to open the notebook:
 - With Jupyter: run `jupyter notebook` (or `jupyter lab`) and click the file.
