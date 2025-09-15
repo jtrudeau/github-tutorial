@@ -1,11 +1,11 @@
-# Git Basics: The Simplest Tutorial
+# Git Basics: Short Tutorial
 
-Welcome! This tiny repo helps absolute beginners practice the core Git flow: make a change locally and push it to a remote.
+This tiny repo helps absolute beginners practice the core Git flow: make a change locally and push it to a remote.
 
-## What this is (in plain words)
-- A tiny, friendly practice project to learn the one workflow most people use every day with Git: change → commit → push.
+## What this is
+- Practice project to learn the one workflow most people use every day with Git: change → commit → push.
 - You will open a small notebook, run one cell so it produces output, save it, commit, then push to a fresh GitHub repo.
-- No prior Git knowledge required. Minimal terminal commands. Takes ~10–20 minutes.
+- No prior Git knowledge required. Minimal terminal commands. 
 
 ## Who it’s for
 - Anyone who has never used Git or GitHub before.
@@ -35,9 +35,9 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-### (Optional) Use SSH with GitHub
-If you prefer SSH over HTTPS for pushing:
-- Generate a key: `ssh-keygen -t ed25519 -C "you@example.com"` (press Enter for defaults)
+### Use SSH with GitHub
+SSH preferred for pushing your changes:
+- Generate a key: `ssh-keygen -t ed25519 -C "you@example.com"` (use the email you use on Github - the email you used to configure git. Press Enter for defaults)
 - Start agent and add key:
   - macOS: `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`
   - Linux/WSL/Windows Git Bash: `eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519`
@@ -46,7 +46,16 @@ If you prefer SSH over HTTPS for pushing:
   - Linux: `xclip -sel clip < ~/.ssh/id_ed25519.pub` (or `cat ~/.ssh/id_ed25519.pub` and copy)
   - Windows: `cat ~/.ssh/id_ed25519.pub` and copy
 - Add it in GitHub: Settings → SSH and GPG keys → New SSH key → paste.
-- Test: `ssh -T git@github.com` (you should see a success greeting).
+
+More information if needed here at [this link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+## Clone this repo 
+
+Test whether the ssh protocol works.
+
+`git clone git@github.com:jtrudeau/github-tutorial.git `
+
+
 
 ## 2) Explore this repo
 ```
