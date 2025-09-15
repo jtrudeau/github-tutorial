@@ -4,8 +4,8 @@ This tiny repo helps absolute beginners practice the core Git flow: make a chang
 
 ## What this is
 - Practice project to learn the one workflow most people use every day with Git: change → commit → push.
-- You will open a small notebook, run one cell so it produces output, save it, commit, then push to a fresh GitHub repo.
-- No prior Git knowledge required. Minimal terminal commands. 
+- You will open a small notebook, run one cell so it produces output, save it, commit, then push back to this GitHub repo.
+- No prior Git knowledge required. Minimal terminal commands.
 
 ## Who it’s for
 - Anyone who has never used Git or GitHub before.
@@ -22,7 +22,7 @@ This tiny repo helps absolute beginners practice the core Git flow: make a chang
 - Configure Git with your name and email.
 - Make a small local change (run and save a notebook).
 - Commit your change.
-- Create a new GitHub repository and push to it.
+- Push your change back to this repo.
 
 ## Prerequisites
 - Git installed (macOS: `xcode-select --install` or `brew install git`; Ubuntu: `sudo apt-get install git`).
@@ -49,11 +49,11 @@ SSH preferred for pushing your changes:
 
 More information if needed here at [this link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-## Clone this repo 
+## Clone this repo
 
 Test whether the ssh protocol works.
 
-`git clone git@github.com:jtrudeau/github-tutorial.git `
+`git clone git@github.com:jtrudeau/github-tutorial.git`
 
 
 
@@ -75,16 +75,23 @@ git add exercises/gaussian.ipynb
 git commit -m "Run Gaussian notebook and save output"
 ```
 
-## 5) Create a GitHub repo and set `origin`
-- In GitHub, click “New repository”. Name it something like `git-tutorial-practice` and keep it empty (no README, no license).
-- Copy the repo URL (HTTPS is simplest).
-- Back in your terminal, run:
+## 5) Confirm `origin` points to this class repo
+- You cloned this repo. Do not create a new GitHub repo.
+- Check your remotes:
+
+```bash
+git remote -v
+# Should show something like:
+# origin  git@github.com:jtrudeau/github-tutorial.git (fetch)
+# origin  git@github.com:jtrudeau/github-tutorial.git (push)
 ```
-git branch -M main
-# EITHER use HTTPS (simple):
-git remote add origin https://github.com/<your-username>/git-tutorial-practice.git
-# OR use SSH (if you set up keys):
-# git remote add origin git@github.com:<your-username>/git-tutorial-practice.git
+
+- If it doesn't, set it to this repo URL:
+
+```bash
+git remote set-url origin git@github.com:jtrudeau/github-tutorial.git
+# Or HTTPS:
+# git remote set-url origin https://github.com/jtrudeau/github-tutorial.git
 ```
 
 ## 6) Push to GitHub
@@ -127,6 +134,7 @@ If anything goes wrong, `git status` usually tells you what to do next.
   - Use the HTTPS URL when adding `origin` (it starts with `https://`).
   - If you added the wrong URL, reset it:
     - `git remote set-url origin https://github.com/<you>/<repo>.git`
+  - If you get "Permission denied" pushing to this class repo, ensure you have write access or contact the instructor.
 
 - Push rejected because the GitHub repo isn’t empty
   - Create the GitHub repo with no README/license. If you accidentally added files there, either recreate it empty or run `git pull --rebase` and resolve, then `git push`.
