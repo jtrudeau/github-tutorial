@@ -60,7 +60,6 @@ Test whether the ssh protocol works.
 ## 2) Explore this repo
 ```
 git status
-git log --oneline --decorate --graph --all
 ```
 
 ## 3) Make a tiny change
